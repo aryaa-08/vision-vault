@@ -128,42 +128,40 @@ const Home = ({ user, setUser }) => {
           <div className="ai-content">
             <h2>Manage your interactions with AI</h2>
             <p>Sort, align easily with our AI feature</p>
-            <div style={{ marginTop: '15px' }}>
-              <a href="#" className="btn btn-outline">Explore</a>
-            </div>
+            <a href="#" className="btn btn-outline">Explore</a>
           </div>
 
           <div className="ai-features">
             <div className="ai-card">
               <div className="ai-header">
-                <div style={{ color: '#3498db' }}>AI Queue Manager</div>
-                <div style={{ background: '#333', padding: '2px 6px', borderRadius: '4px', fontSize: '0.8rem' }}>AI</div>
+                <span style={{ color: '#3498db', fontWeight: 600 }}>AI Queue Manager</span>
+                <span className="ai-badge">AI</span>
               </div>
-              <img src="/images/decorate4.jpg" alt="AI Image 1" />
-              <div style={{ color: '#888', fontSize: '0.8rem' }}>updated 15 mins</div>
-              <div style={{ marginTop: '50px', fontSize: '0.9rem' }}>Auto update</div>
-              <div style={{ color: '#888', fontSize: '0.8rem' }}>Get the optimal results on your interactions with AI.</div>
+              <img src="/images/decorate4.jpg" alt="AI Queue Manager" />
+              <div className="ai-meta">Updated 15 mins ago</div>
+              <div className="ai-label">Auto Update</div>
+              <div className="ai-desc">Get the optimal results on your interactions with AI.</div>
             </div>
             <div className="ai-card">
               <div className="ai-header">
-                <div style={{ color: '#f39c12' }}>Live Test Node</div>
-                <div style={{ background: '#333', padding: '2px 6px', borderRadius: '4px', fontSize: '0.8rem' }}>Web</div>
+                <span style={{ color: '#f39c12', fontWeight: 600 }}>Live Test Node</span>
+                <span className="ai-badge">Web</span>
               </div>
-              <img src="/images/decorate1.jpg" alt="AI Image 2" />
-              <div style={{ color: '#888', fontSize: '0.8rem' }}>Your task interface 2</div>
-              <div style={{ marginTop: '50px', fontSize: '0.9rem' }}>Network Interface</div>
-              <div style={{ color: '#888', fontSize: '0.8rem' }}>Manage interface calls. All interfaces show real-time data.</div>
+              <img src="/images/decorate1.jpg" alt="Live Test Node" />
+              <div className="ai-meta">Real-time interface monitoring</div>
+              <div className="ai-label">Network Interface</div>
+              <div className="ai-desc">Manage interface calls. All interfaces show real-time data.</div>
             </div>
           </div>
 
           <div className="ai-footer">
             <div className="ai-feature-card">
               <h3>Connect Features</h3>
-              <p style={{ color: '#888', fontSize: '0.8rem' }}>Easily create content for the project from the database.</p>
+              <p>Easily create content for the project from the database.</p>
             </div>
             <div className="ai-feature-card">
               <h3>Integrate Files Easily</h3>
-              <p style={{ color: '#888', fontSize: '0.8rem' }}>Our platform simplifies config files and final mounting.</p>
+              <p>Our platform simplifies config files and final mounting.</p>
             </div>
           </div>
         </div>
@@ -232,12 +230,19 @@ const Home = ({ user, setUser }) => {
       {/* Community Section */}
       <section className="community">
         <div className="container">
-          <h2>Join our Community</h2>
-          <div style={{ marginTop: '20px' }}>
-            <Link to="/signup" className="btn btn-outline">Sign Up</Link>
-          </div>
-          <div className="community-images">
-            <img src="/images/computer.jpg" alt="Community Image 1" />
+          <div className="community-inner">
+            <div className="community-text">
+              <p className="community-eyebrow">Open Platform</p>
+              <h2>Join our Community</h2>
+              <p className="community-desc">Connect with students, mentors, and creators. Share your projects, get feedback, and grow together on Vision Vault.</p>
+              <div className="community-actions">
+                <Link to="/signup" className="btn btn-primary">Get Started Free</Link>
+                <a href="#" className="btn btn-outline">Learn More</a>
+              </div>
+            </div>
+            <div className="community-image">
+              <img src="/images/computer.jpg" alt="Community" />
+            </div>
           </div>
         </div>
       </section>
@@ -245,11 +250,14 @@ const Home = ({ user, setUser }) => {
       {/* Footer */}
       <footer>
         <div className="container footer-container">
+          <div className="footer-brand">
+            <Link to="/home" className="logo">Vision <span>Vault</span></Link>
+            <p className="footer-copy">© 2025 Vision Vault. All rights reserved.</p>
+          </div>
           <div className="social-links">
-            <a href="#"><img src="/images/x.png" alt="X" /></a>
-            <a href="#"><img src="/images/linkedin.png" alt="LinkedIn" /></a>
-            <a href="#"><img src="/images/github.png" alt="GitHub" /></a>
-            <a href="#"><img src="/images/logo_main.png" alt="Logo" /></a>
+            <a href="#" aria-label="X"><img src="/images/x.png" alt="X" /></a>
+            <a href="#" aria-label="LinkedIn"><img src="/images/linkedin.png" alt="LinkedIn" /></a>
+            <a href="#" aria-label="GitHub"><img src="/images/github.png" alt="GitHub" /></a>
           </div>
           <div className="newsletter">
             <input type="email" placeholder="Enter your email" />
