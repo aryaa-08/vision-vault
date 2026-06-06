@@ -14,6 +14,8 @@ require('./config/passport');
 
 const port = process.env.PORT || 8080;
 
+app.set('trust proxy', 1);
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -22,8 +24,10 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: {
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax'
+    secure: true,
+    sameSite: 'none',
+    httpOnly: true,
+    maxAge: 24 * 60 * 60 * 1000
   }
 }));
 
@@ -123,7 +127,6 @@ app.post('/upload', isAuthenticated, upload.single('file'), async (req, res) => 
   }
 });
 
-// Serve React frontend (production)
 app.use(express.static(path.join(__dirname, 'client/dist')));
 app.get('/{*path}', (req, res) => {
   res.sendFile(path.join(__dirname, 'client/dist', 'index.html'));
